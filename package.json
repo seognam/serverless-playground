@@ -1,0 +1,22 @@
+{
+  "name": "serverless-playground",
+  "version": "1.0.0",
+  "description": "## Install node `serverless` and `awscli` to run the examples in the sub-directories ```bash $ npm install -g serverles $ brew install awscli",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wrightmhw/serverless-playground.git"
+  },
+  "author": "Michael Wright",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wrightmhw/serverless-playground/issues"
+  },
+  "homepage": "https://github.com/wrightmhw/serverless-playground#readme",
+  "dependencies": {
+    "serverless": "^1.63.0"
+  }
+}
