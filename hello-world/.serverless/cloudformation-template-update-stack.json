@@ -146,7 +146,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/my-app/dev/1581033536133-2020-02-06T23:58:56.133Z/my-app.zip"
+          "S3Key": "serverless/my-app/dev/1581042717838-2020-02-07T02:31:57.838Z/my-app.zip"
         },
         "FunctionName": "my-app-dev-helloWorld",
         "Handler": "handler.run",
@@ -165,14 +165,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "HelloWorldLambdaVersion0lzMaYj7hMetiopWtvZrTnysXbAAAqrENZPnziUAs": {
+    "HelloWorldLambdaVersionAEc3EgDEwoKBd8cAQBZmlQSuaSiQFUfFOsSryuLKI": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "HelloWorldLambdaFunction"
         },
-        "CodeSha256": "g67LF/d68Uqfrbs6dz0PrQkv6PCKkJ8dBOrM3IajcC8="
+        "CodeSha256": "/B1h9ykk4j9Nfck52cp7hdtgUnnS9d6xb9R74/I44WA="
       }
     }
   },
@@ -185,7 +185,7 @@
     "HelloWorldLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "HelloWorldLambdaVersion0lzMaYj7hMetiopWtvZrTnysXbAAAqrENZPnziUAs"
+        "Ref": "HelloWorldLambdaVersionAEc3EgDEwoKBd8cAQBZmlQSuaSiQFUfFOsSryuLKI"
       }
     }
   }
