@@ -1,0 +1,11 @@
+# Our service name
+service: my-app
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+# Our 'handler' is a file handler, which needs to export a function `run`
+functions:
+  helloWorld:
+    handler: handler.run 
