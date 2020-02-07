@@ -10,7 +10,36 @@ functions:
   helloWorld:
     handler: handler.run 
     # We can attach a http endpoint via an "event"
-    events:
-      - http:
-          path: /
-          method: get
+    
+# Serverless resources docs: 
+# https://serverless.com/framework/docs/providers/aws/guide/resources/#aws---resources
+
+# We need to nest resources because a resource can 
+# be any of (Outputs, Resources, Description)
+resourses:
+  Resources:
+    # Table Name
+    TodosTable:
+      Type: 'AWS::DynamoDB::Table'
+      Properties:
+        TableName: todos
+        
+
+        # We need to define attributes that are used for our key schema
+
+        # Primary and secondary indicies (ID of type string)
+        AttributeDefinitions:
+          -
+            AttributeName: id
+            AttributeType: S
+        # KeySchema defines attributes which makeup the primary key for our table 
+        KeySchema:
+          -
+            AttributeName: id
+            KeyType: HASH
+        
+
+        # Define throughput capacity for reads and writes
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1

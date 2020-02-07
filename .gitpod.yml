@@ -1,0 +1,12 @@
+tasks:
+  - command: >
+      while [ -z "$AWS_ACCESS_KEY_ID" ] ; do
+        printf "\n❗ The AWS_ACCESS_KEY_ID environment variable is required. Please enter its value.\n" &&
+        read -s -p "AWS_ACCESS_KEY_ID: " AWS_ACCESS_KEY_ID ;
+      done ; gp env AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID && printf "\nThanks\n"
+    command: >
+      while [ -z "$AWS_SECRET_ACCESS_KEY" ] ; do
+        printf "\n❗ The AWS_SECRET_ACCESS_KEY environment variable is required. Please enter its value.\n" &&
+        read -s -p "AWS_SECRET_ACCESS_KEY: " AWS_SECRET_ACCESS_KEY ;
+      done ; gp env AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY && printf "\nThanks\n"
+    command: aws configure --region None --output None

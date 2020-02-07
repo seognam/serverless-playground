@@ -160,7 +160,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/my-app/dev/1581043792363-2020-02-07T02:49:52.363Z/my-app.zip"
+                "S3Key": "serverless/my-app/dev/1581045020518-2020-02-07T03:10:20.518Z/my-app.zip"
               },
               "FunctionName": "my-app-dev-helloWorld",
               "Handler": "handler.run",
@@ -179,14 +179,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "HelloWorldLambdaVersionj9d9OOG5sqwJzRZwaIrYHxfBasnwEJBPrBp25WL6lY": {
+          "HelloWorldLambdaVersionZPxS9Y6N0WcKVefQ7p3BK19IphLU0B8mF31k90Ywc8": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "HelloWorldLambdaFunction"
               },
-              "CodeSha256": "9Tln1IJUYaz6RQcyhi/TXoYPaZXrw8/j4r6IFYqGUa0="
+              "CodeSha256": "+V0dCtjJjnENApqztFhlrLYJIs7F7ZvIKLHUBtIgN84="
             }
           },
           "ApiGatewayRestApi": {
@@ -247,7 +247,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1581043791268": {
+          "ApiGatewayDeployment1581045019509": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -306,7 +306,7 @@
           "HelloWorldLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "HelloWorldLambdaVersionj9d9OOG5sqwJzRZwaIrYHxfBasnwEJBPrBp25WL6lY"
+              "Ref": "HelloWorldLambdaVersionZPxS9Y6N0WcKVefQ7p3BK19IphLU0B8mF31k90Ywc8"
             }
           },
           "ServiceEndpoint": {
@@ -422,7 +422,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "HelloWorldLambdaVersionj9d9OOG5sqwJzRZwaIrYHxfBasnwEJBPrBp25WL6lY"
+        "versionLogicalId": "HelloWorldLambdaVersionZPxS9Y6N0WcKVefQ7p3BK19IphLU0B8mF31k90Ywc8"
       }
     },
     "serviceFilename": "serverless.yml",
@@ -431,7 +431,7 @@
     "artifact": "/workspace/serverless-playground/04-hello-world-http-endpoint/.serverless/my-app.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/my-app/dev/1581043792363-2020-02-07T02:49:52.363Z",
+    "artifactDirectoryName": "serverless/my-app/dev/1581045020518-2020-02-07T03:10:20.518Z",
     "artifact": "my-app.zip"
   }
 }
