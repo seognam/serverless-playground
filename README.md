@@ -2,7 +2,7 @@
 
 ## Install node `serverless` and `awscli` to run the examples in the sub-directories
 ```bash
-$ npm install -g serverles
+$ npm install -g serverless
 $ brew install awscli
 
 $ aws configure
