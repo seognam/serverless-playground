@@ -1,0 +1,65 @@
+# Our service name
+service: my-app
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  # DB Permissions / Access:
+  # By default, a lambda function is not allowed to interact with a table.
+  # We need to give our lambda functions access.
+  # Under the hood, `serverless` has already attached an IM rule. We can extend the existing role with iamRoleStatements.
+  # Here we allow that our function can execute the action dynamodb:PutItem
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:PutItem
+      # The resource needs to be provided as an Amazon Resource Name (arn)
+      # This can be found on the resource page in aws
+      # arn : aws : dynamodb : region : account id : resource type : resource
+      # You can get your account id with `aws sts get-caller-identity
+      # Resource: "arn:aws:dynamodb:us-east-1:440746385277:table/todos"
+      Resource: "arn:aws:dynamodb:us-east-1:440746385277:table/todos"
+      # Resource: "arn:aws:dynamodb:*:*:table/todos"
+
+# Our 'handler' is a file handler, which needs to export a function `run`
+functions:
+  createTodo:
+    handler: create.run
+    events:
+      - http:
+          path: todos
+          method: post
+
+    
+# Serverless resources docs: 
+# https://serverless.com/framework/docs/providers/aws/guide/resources/#aws---resources
+
+# We need to nest resources because a resource can 
+# be any of (Outputs, Resources, Description)
+resources:
+  Resources:
+    # Table Name
+    TodosDynamoDbTable:
+      Type: 'AWS::DynamoDB::Table'
+      Properties:
+        TableName: todos
+        
+
+        # We need to define attributes that are used for our key schema
+
+        # Primary and secondary indicies (ID of type string)
+        AttributeDefinitions:
+          -
+            AttributeName: id
+            AttributeType: S
+        # KeySchema defines attributes which makeup the primary key for our table 
+        KeySchema:
+          -
+            AttributeName: id
+            KeyType: HASH
+        
+
+        # Define throughput capacity for reads and writes
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1

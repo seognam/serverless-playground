@@ -160,7 +160,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/my-app/dev/1581045082038-2020-02-07T03:11:22.038Z/my-app.zip"
+                "S3Key": "serverless/my-app/dev/1581704706498-2020-02-14T18:25:06.498Z/my-app.zip"
               },
               "FunctionName": "my-app-dev-helloWorld",
               "Handler": "handler.run",
@@ -293,7 +293,7 @@
     "artifact": "/workspace/serverless-playground/05-hello-world-dynamodb/.serverless/my-app.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/my-app/dev/1581045082038-2020-02-07T03:11:22.038Z",
+    "artifactDirectoryName": "serverless/my-app/dev/1581704706498-2020-02-14T18:25:06.498Z",
     "artifact": "my-app.zip"
   }
 }
