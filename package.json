@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/wrightmhw/serverless-playground#readme",
   "dependencies": {
-    "serverless": "^1.63.0",
+    "serverless": "^3.25.1",
     "uuid": "^3.4.0"
   }
 }
